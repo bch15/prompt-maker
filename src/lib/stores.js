@@ -11,4 +11,4 @@ openRouterApiKey.subscribe((value) => {
 export const activeTab = writable('article'); // 'article', 'development', 'settings'
 
 // Predefined Gemini API Key (not stored, just used)
-export const geminiApiKey = '';
+export const geminiApiKey = 'AIzaSyC7_BCnYFOtZm4lbNaP1HR5rilgYfwxMDI';
