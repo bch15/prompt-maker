@@ -1,29 +1,25 @@
 {
-  "name": "prompt-suite", // نام پروژه شما
-  "private": true, // اگر نمی‌خواهید به عنوان یک پکیج عمومی در npm منتشر شود
-  "version": "0.1.0", // نسخه پروژه
-  "type": "module", // مهم برای Vite و استفاده از ماژول‌های ES
+  "name": "prompt-suite",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite", // اسکریپت برای اجرای سرور توسعه Vite
-    "build": "vite build", // اسکریپت برای بیلد کردن پروژه برای تولید
-    "preview": "vite preview", // اسکریپت برای پیش‌نمایش نسخه بیلد شده به صورت محلی
-    "check": "svelte-check --tsconfig ./tsconfig.json" // (اختیاری) برای بررسی تایپ‌ها اگر از TypeScript استفاده می‌کنید
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.0.2", // پلاگین Vite برای Svelte
-    "svelte": "^4.2.12", // خود کتابخانه Svelte
-    "vite": "^5.2.0", // ابزار بیلد و سرور توسعه
-    "tailwindcss": "^3.4.3", // فریمورک Tailwind CSS
-    "postcss": "^8.4.38", // برای پردازش CSS (مورد نیاز Tailwind)
-    "autoprefixer": "^10.4.19", // برای اضافه کردن پیشوندهای مرورگر به CSS
-    "svelte-preprocess": "^5.1.3", // برای پیش‌پردازش Svelte (مورد نیاز برای Tailwind و PostCSS)
-    "@tsconfig/svelte": "^5.0.2", // (اختیاری) تنظیمات TypeScript برای Svelte
-    "svelte-check": "^3.6.7", // (اختیاری) ابزار بررسی Svelte
-    "typescript": "^5.2.2" // (اختیاری) اگر از TypeScript استفاده می‌کنید
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "svelte": "^4.2.12",
+    "vite": "^5.2.0",
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19",
+    "svelte-preprocess": "^5.1.3",
+    "@tsconfig/svelte": "^5.0.2",
+    "svelte-check": "^3.6.7",
+    "typescript": "^5.2.2"
   },
-  "dependencies": {
-    // در این پروژه خاص، وابستگی‌های زمان اجرا (dependencies) زیادی نداریم
-    // چون بیشتر ابزارها در زمان توسعه (devDependencies) استفاده می‌شوند.
-    // اگر کتابخانه خاصی برای زمان اجرا اضافه کنید (مثلاً برای کار با تاریخ، نمودار و ...) اینجا قرار می‌گیرد.
-  }
+  "dependencies": {}
 }
