@@ -1,7 +1,18 @@
-import preprocess from 'svelte-preprocess';
-
+/** @type {import('tailwindcss').Config} */
 export default {
-  preprocess: preprocess({
-    postcss: true, // Ensure PostCSS (for Tailwind) is processed
-  }),
+  content: [
+    './src/**/*.{html,js,svelte,ts}', // مهم: تمام فایل‌هایی که ممکنه کلاس Tailwind داشته باشن
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Tahoma', 'sans-serif'], // تنظیم فونت پیش‌فرض فارسی
+      },
+      // اینجا می‌تونی سایر شخصی‌سازی‌های تم Tailwind رو اضافه کنی
+      // مثلا رنگ‌ها، فاصله‌ها و ...
+    },
+  },
+  plugins: [
+    // اینجا می‌تونی پلاگین‌های Tailwind مثل @tailwindcss/forms یا @tailwindcss/typography رو اضافه کنی
+  ],
 };

@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* استایل‌های سفارشی و گلوبال شما */
 body {
   @apply bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-4 font-sans;
-  direction: rtl; /* Right-to-left for Farsi */
+  direction: rtl; /* برای راست‌چین شدن کل صفحه */
 }
 
-/* Custom scrollbar (optional, for a more modern feel) */
+/* مثال: استایل سفارشی برای scrollbar اگر می‌خوای */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -21,4 +22,9 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280; /* gray-500 */
+}
+
+/* سایر استایل‌های گلوبالی که با @apply نمی‌نویسی یا برای تگ‌های خاصی هستن */
+h1, h2, h3 {
+  /* @apply text- مثلا ... ; */
 }
