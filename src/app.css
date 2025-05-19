@@ -1,30 +1,102 @@
+/* src/app.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* استایل‌های سفارشی و گلوبال شما */
 body {
-  @apply bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-4 font-sans;
-  direction: rtl; /* برای راست‌چین شدن کل صفحه */
+  @apply bg-space-bg text-space-text min-h-screen flex flex-col items-center p-4 font-sans;
+  direction: rtl;
 }
 
-/* مثال: استایل سفارشی برای scrollbar اگر می‌خوای */
+/* استایل‌های سفارشی برای ایجاد حس نئونی و فضایی */
+
+/* لینک‌ها */
+a {
+  @apply text-neon-primary hover:text-opacity-80 transition-colors duration-200;
+}
+a:hover {
+  text-shadow: 0 0 8px theme('colors.neon-primary / 70%'); /* درخشش ملایم برای لینک‌ها */
+}
+
+/* هدر اصلی */
+h1, .h1-style { /* کلاس کمکی برای استایل مشابه h1 */
+  @apply text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-neon-primary via-pink-500 to-neon-accent;
+  /* می‌توانید گرادیانت را با رنگ‌های جدید تنظیم کنید یا از تک رنگ استفاده کنید */
+  /* یا برای مثال: text-neon-primary با text-shadow */
+  /* text-shadow: 0 0 10px theme('colors.neon-primary / 50%'), 0 0 20px theme('colors.neon-primary / 30%'); */
+}
+
+/* دکمه‌های پایه (می‌توانید در کامپوننت‌ها شخصی‌سازی کنید) */
+.btn-neon-primary {
+  @apply bg-neon-primary text-white font-semibold px-6 py-2.5 rounded-md shadow-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-neon-primary focus:ring-opacity-50 transition-all duration-200;
+  box-shadow: 0 0 8px 0px theme('colors.neon-primary / 60%'); /* درخشش اولیه */
+}
+.btn-neon-primary:hover {
+  box-shadow: 0 0 15px 3px theme('colors.neon-primary / 70%'); /* درخشش بیشتر در هاور */
+}
+
+.btn-neon-secondary {
+   @apply bg-transparent border-2 border-neon-primary text-neon-primary font-semibold px-6 py-2.5 rounded-md hover:bg-neon-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-neon-primary focus:ring-opacity-50 transition-all duration-200;
+}
+.btn-neon-secondary:hover {
+  box-shadow: 0 0 15px 3px theme('colors.neon-primary / 50%');
+}
+
+
+/* کارت‌ها یا بخش‌های اصلی محتوا */
+.card-space-theme {
+  @apply bg-space-card shadow-card-light rounded-xl p-6 sm:p-10 border border-space-border;
+  /* برای ایجاد حس شناور بودن بیشتر */
+  /* box-shadow: 0 10px 30px -10px rgba(29, 205, 159, 0.1), 0 5px 15px -5px rgba(160, 21, 62, 0.05); */
+}
+
+/* فیلدهای ورودی */
+.input-field-space {
+  @apply w-full bg-white border border-space-border text-space-text placeholder-gray-400 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-neon-primary focus:border-neon-primary sm:text-sm;
+}
+.input-label-space {
+  @apply block text-sm font-medium text-space-text-secondary mb-1;
+}
+
+/* select ها */
+.select-field-space {
+  @apply w-full bg-white border border-space-border text-space-text px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-neon-primary focus:border-neon-primary sm:text-sm;
+}
+
+
+/* اسکرول بار (اختیاری) */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* gray-800 */
+  background: theme('colors.space-bg / 80%'); /* کمی شفاف */
 }
 ::-webkit-scrollbar-thumb {
-  background: #4b5563; /* gray-600 */
-  border-radius: 4px;
+  background: theme('colors.neon-primary');
+  border-radius: 5px;
+  border: 2px solid theme('colors.space-bg'); /* ایجاد فاصله */
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6b7280; /* gray-500 */
+  background: theme('colors.neon-primary / 80%');
 }
 
-/* سایر استایل‌های گلوبالی که با @apply نمی‌نویسی یا برای تگ‌های خاصی هستن */
-h1, h2, h3 {
-  /* @apply text- مثلا ... ; */
+
+/* استایل‌های سفارشی برای درخشش نئونی روی المان‌های خاص */
+.neon-text-primary {
+  @apply text-neon-primary;
+  text-shadow: 0 0 5px theme('colors.neon-primary / 70%'),
+               0 0 10px theme('colors.neon-primary / 50%'),
+               0 0 15px theme('colors.neon-primary / 30%');
+}
+.neon-text-accent {
+  @apply text-neon-accent;
+  text-shadow: 0 0 5px theme('colors.neon-accent / 70%'),
+               0 0 10px theme('colors.neon-accent / 50%'),
+               0 0 15px theme('colors.neon-accent / 30%');
+}
+
+.neon-border-primary {
+  @apply border-neon-primary;
+  box-shadow: 0 0 8px 0 theme('colors.neon-primary / 50%');
 }
