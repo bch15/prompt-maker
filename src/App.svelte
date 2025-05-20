@@ -20,9 +20,9 @@
 
 <div class="w-full max-w-5xl card-space-theme space-y-8 min-h-[80vh] mx-auto">
   <header class="text-center mb-10 pt-6 sm:pt-0"> <!-- کمی پدینگ بالا برای موبایل -->
-    <h1 class="text-4xl sm:text-5xl font-extrabold neon-text-primary filter drop-shadow-[0_0_10px_theme(colors.neon-primary/0.6)]">
-      مولد پرامپت پیشرفته
-    </h1>
+   <h1 class="h1-neon-custom-shadow">
+    مولد پرامپت پیشرفته
+  </h1>
     <p class="text-space-text-secondary mt-4 text-lg">
       ابزاری برای خلق پرامپت‌های دقیق و جامع با کمک هوش مصنوعی
     </p>

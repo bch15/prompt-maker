@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --neon-primary-color: theme('colors.neon-primary'); /* 29 205 159 در RGB */
+    --neon-primary-shadow-color: rgba(29, 205, 159, 0.6); /* معادل 1DCD9F با alpha 0.6 */
+  }
+
 body {
   @apply bg-space-bg text-space-text min-h-screen flex flex-col items-center p-2 sm:p-4 font-sans;
   direction: rtl;
@@ -25,6 +30,11 @@ a:hover, .link-neon:hover {
   @apply text-2xl sm:text-3xl font-semibold text-neon-primary filter drop-shadow-[0_0_8px_theme(colors.neon-primary/0.5)];
 }
 
+.h1-neon-custom-shadow {
+    @apply text-4xl sm:text-5xl font-extrabold neon-text-primary filter;
+    text-shadow: 0 0 5px var(--neon-primary-shadow-color), 0 0 10px var(--neon-primary-shadow-color);
+    filter: drop-shadow(0 0 10px var(--neon-primary-shadow-color));
+  }
 
 /* دکمه‌های اصلی */
 .btn {
