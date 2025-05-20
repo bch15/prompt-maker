@@ -1,32 +1,18 @@
-import adapter from '@sveltejs/adapter-auto'; // یا adapter-vercel
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'; // برای SvelteKit جدیدتر
-// یا اگر از svelte-preprocess قدیمی‌تر استفاده می‌کنی:
-// import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-auto'; // یا @sveltejs/adapter-vercel
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // preprocess: preprocess({ // برای svelte-preprocess قدیمی‌تر
-  //   postcss: true,
-  // }),
-  preprocess: vitePreprocess(), // برای SvelteKit جدیدتر، خودش PostCSS رو مدیریت می‌کنه اگر تنظیم شده باشه
+  preprocess: vitePreprocess(), // این برای Tailwind با PostCSS کار می‌کند
 
   kit: {
-    adapter: adapter(), // آداپتور برای محیط دیپلوی (Vercel)
-    // اگر نیاز به تنظیمات خاصی برای مسیرها یا aliasها داری، اینجا اضافه می‌شه
-    // files: {
-    //   assets: 'static',
-    //   hooks: {
-    //     client: 'src/hooks.client',
-    //     server: 'src/hooks.server',
-    //   },
-    //   lib: 'src/lib',
-    //   params: 'src/params',
-    //   routes: 'src/routes',
-    //   serviceWorker: 'src/service-worker',
-    //   appTemplate: 'src/app.html', // فایل HTML اصلی
-    //   errorTemplate: 'src/error.html',
-    // },
-  },
+    adapter: adapter(),
+    // اگر alias خاصی برای مسیرها دارید، اینجا تنظیم کنید
+    // alias: {
+    //   '$components': 'src/components',
+    //   '$lib': 'src/lib'
+    // }
+  }
 };
 
 export default config;
