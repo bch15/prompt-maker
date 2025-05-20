@@ -4,6 +4,7 @@
   import ArticlePromptForm from './components/ArticlePromptForm.svelte';
   import DevPromptForm from './components/DevPromptForm.svelte'; // We'll create this
   import SettingsPane from './components/SettingsPane.svelte'; // We'll create this
+  import RoleExplorer from './components/RoleExplorer.svelte'; // اضافه کردن ایمپورت جدید
 
   let currentTab;
   activeTab.subscribe(value => {
@@ -28,23 +29,24 @@
     </p>
   </header>
 
-  <div class="flex justify-center space-x-2 space-x-reverse border-b border-gray-700 pb-4 mb-6">
+  <div class="flex justify-center flex-wrap gap-2 border-b border-space-border pb-4 mb-6 px-2">
     <TabButton tabId="article" currentTab={$activeTab} label="مقاله نویسی" />
     <TabButton tabId="development" currentTab={$activeTab} label="توسعه نرم‌افزار" />
+    <TabButton tabId="explorer" currentTab={$activeTab} label="کاوشگر نقش‌ها" /> <!-- تب جدید -->
     <TabButton tabId="creative" currentTab={$activeTab} label="خلاقیت و ایده" />
     <TabButton tabId="settings" currentTab={$activeTab} label="تنظیمات API" />
   </div>
 
-  <main class="mt-6">
+
+  <main class="mt-6 px-1 sm:px-0">
     {#if $activeTab === 'article'}
       <ArticlePromptForm openRouterApiKey={orApiKey} geminiApiKey={G_API_KEY} />
     {:else if $activeTab === 'development'}
       <DevPromptForm openRouterApiKey={orApiKey} />
+    {:else if $activeTab === 'explorer'} <!-- نمایش کامپوننت جدید -->
+      <RoleExplorer />
     {:else if $activeTab === 'creative'}
-      <div class="text-center p-10 text-gray-500">
-        <h2 class="text-2xl font-semibold mb-4">پرامپت‌های خلاقیت و ایده‌پردازی</h2>
-        <p>این بخش به زودی تکمیل خواهد شد. برای مثال: ایده برای داستان کوتاه، سناریوی ویدیو، نام برند و...</p>
-      </div>
+      <!-- ... -->
     {:else if $activeTab === 'settings'}
       <SettingsPane />
     {/if}
