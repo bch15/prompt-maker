@@ -19,23 +19,23 @@
 </script>
 
 <div class="w-full max-w-5xl card-space-theme space-y-8 min-h-[80vh] mx-auto">
-<header class="text-center mb-10 pt-6 sm:pt-0"> {/* کمی پدینگ بالا برای موبایل */}
+  <header class="text-center mb-10 pt-6 sm:pt-0"> <!-- کمی پدینگ بالا برای موبایل -->
     <h1 class="text-4xl sm:text-5xl font-extrabold neon-text-primary filter drop-shadow-[0_0_10px_theme(colors.neon-primary/0.6)]">
-      ProGen
+      مولد پرامپت پیشرفته
     </h1>
     <p class="text-space-text-secondary mt-4 text-lg">
       ابزاری برای خلق پرامپت‌های دقیق و جامع با کمک هوش مصنوعی
     </p>
   </header>
 
-  <div class="flex justify-center flex-wrap gap-2 border-b border-space-border pb-4 mb-6 px-2"> {/* flex-wrap و gap برای نمایش بهتر در موبایل */}
+  <div class="flex justify-center flex-wrap gap-2 border-b border-space-border pb-4 mb-6 px-2">
     <TabButton tabId="article" currentTab={$activeTab} label="مقاله نویسی" />
     <TabButton tabId="development" currentTab={$activeTab} label="توسعه نرم‌افزار" />
     <TabButton tabId="creative" currentTab={$activeTab} label="خلاقیت و ایده" />
     <TabButton tabId="settings" currentTab={$activeTab} label="تنظیمات API" />
   </div>
 
-  <main class="mt-6 px-1 sm:px-0"> {/* پدینگ افقی برای موبایل در محتوای اصلی */}
+  <main class="mt-6 px-1 sm:px-0">
     {#if $activeTab === 'article'}
       <ArticlePromptForm openRouterApiKey={orApiKey} geminiApiKey={G_API_KEY} />
     {:else if $activeTab === 'development'}
@@ -52,15 +52,13 @@
 </div>
 
 <footer class="w-full max-w-4xl text-center py-8 mt-12 border-t border-space-border mx-auto">
-  <p class="text-sm text-space-text-secondary">
-    Built from a Need. (Enjoy!) By:
-    Behzad Chaharbaghi
-  </p>
-  <p class="text-sm text-space-text-secondary mt-1">
-    <a href="https://github.com/bch15/Promptลอง" target="_blank" rel="noopener noreferrer" class="neon-text-primary hover:underline">View project on GitHub</a>
-  </p>
+  <p class="text-sm text-space-text-secondary">
+    ساخته شده با ❤️ توسط: <strong class="font-mono text-space-text">بهزاد چهارباغی</strong>
+  </p>
+  <p class="text-sm text-space-text-secondary mt-1">
+    <a href="https://github.com/bch15/Promptลอง" target="_blank" rel="noopener noreferrer" class="neon-text-primary hover:underline">مشاهده پروژه در گیت‌هاب</a>
+  </p>
 </footer>
-
 
 <style>
   /* در صورت نیاز به استایل خاص برای App.svelte */
