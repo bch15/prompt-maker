@@ -2,120 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --neon-primary-color: theme('colors.neon-primary'); /* 29 205 159 در RGB */
-    --neon-primary-shadow-color: rgba(29, 205, 159, 0.6); /* معادل 1DCD9F با alpha 0.6 */
-  }
-
+/* استایل‌های سفارشی و گلوبال شما */
 body {
-  @apply bg-space-bg text-space-text min-h-screen flex flex-col items-center p-2 sm:p-4 font-sans;
-  direction: rtl;
+  @apply bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center p-4 font-sans;
+  direction: rtl; /* برای راست‌چین شدن کل صفحه */
 }
 
-/* --- کلاس‌های کمکی برای تم نئونی --- */
-
-/* لینک‌ها */
-a, .link-neon {
-  @apply text-neon-primary hover:text-opacity-80 transition-colors duration-200;
-}
-a:hover, .link-neon:hover {
-  text-shadow: 0 0 6px theme('colors.neon-primary / 60%');
-}
-
-/* عنوان اصلی */
-.h1-neon {
-  @apply text-4xl sm:text-5xl font-extrabold text-neon-primary filter drop-shadow-[0_0_10px_theme(colors.neon-primary/0.6)];
-}
-.h2-neon {
-  @apply text-2xl sm:text-3xl font-semibold text-neon-primary filter drop-shadow-[0_0_8px_theme(colors.neon-primary/0.5)];
-}
-
-.h1-neon-custom-shadow {
-    @apply text-4xl sm:text-5xl font-extrabold neon-text-primary filter;
-    text-shadow: 0 0 5px var(--neon-primary-shadow-color), 0 0 10px var(--neon-primary-shadow-color);
-    filter: drop-shadow(0 0 10px var(--neon-primary-shadow-color));
-  }
-
-/* دکمه‌های اصلی */
-.btn {
-  @apply px-5 py-2.5 text-sm sm:text-base font-medium rounded-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-opacity-70 transform hover:scale-105 active:scale-95 shadow-md;
-}
-.btn-neon-primary {
-  @apply btn bg-neon-primary text-white shadow-neon-glow-primary hover:bg-opacity-90 focus:ring-neon-primary;
-}
-.btn-neon-secondary {
-  @apply btn bg-transparent border-2 border-neon-primary text-neon-primary hover:bg-neon-primary hover:text-white focus:ring-neon-primary hover:shadow-neon-glow-primary;
-}
-.btn-neon-accent {
-  @apply btn bg-neon-accent text-white shadow-neon-glow-accent hover:bg-opacity-90 focus:ring-neon-accent;
-}
-.btn-disabled {
-  @apply !bg-gray-300 !text-gray-500 !border-gray-300 !shadow-none cursor-not-allowed hover:!scale-100;
-}
-
-
-/* کارت‌ها یا بخش‌های اصلی محتوا */
-.card-space-theme {
-  @apply bg-space-card shadow-card-light rounded-xl p-4 sm:p-6 md:p-8 border border-transparent;
-  /*  border-space-border; اگر بوردر ملایم‌تری می‌خواهید */
-}
-
-/* فیلدهای ورودی */
-.input-field-space {
-  @apply w-full bg-white border border-gray-300 text-space-text placeholder-gray-400 px-3 py-2.5 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-neon-primary focus:border-neon-primary sm:text-sm transition-shadow duration-200;
-}
-.input-field-space:focus {
-    box-shadow: 0 0 0 3px theme('colors.neon-primary / 30%');
-}
-
-.input-label-space {
-  @apply block text-sm font-medium text-space-text-secondary mb-1.5;
-}
-
-/* Select ها */
-.select-field-space {
-  @apply w-full bg-white border border-gray-300 text-space-text px-3 py-2.5 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-neon-primary focus:border-neon-primary sm:text-sm appearance-none transition-shadow duration-200;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-  background-position: left 0.5rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-left: 2.5rem; /* Adjust based on icon size */
-}
-.select-field-space:focus {
-    box-shadow: 0 0 0 3px theme('colors.neon-primary / 30%');
-}
-
-
-/* اسکرول بار */
+/* مثال: استایل سفارشی برای scrollbar اگر می‌خوای */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: theme('colors.space-bg / 90%');
+  background: #1f2937; /* gray-800 */
 }
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.neon-primary / 80%');
-  border-radius: 5px;
-  border: 2px solid theme('colors.space-bg');
+  background: #4b5563; /* gray-600 */
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.neon-primary');
+  background: #6b7280; /* gray-500 */
 }
 
-/* متن نئونی */
-.neon-text-primary {
-  @apply text-neon-primary;
-  text-shadow: 0 0 3px theme('colors.neon-primary / 50%'),
-               0 0 6px theme('colors.neon-primary / 40%');
-}
-.neon-text-accent {
-  @apply text-neon-accent;
-  text-shadow: 0 0 3px theme('colors.neon-accent / 50%'),
-               0 0 6px theme('colors.neon-accent / 40%');
-}
-
-/* Fieldset legend */
-.fieldset-legend-space {
-    @apply font-semibold text-xl neon-text-primary px-2 filter drop-shadow-[0_0_4px_theme(colors.neon-primary/0.5)];
+/* سایر استایل‌های گلوبالی که با @apply نمی‌نویسی یا برای تگ‌های خاصی هستن */
+h1, h2, h3 {
+  /* @apply text- مثلا ... ; */
 }

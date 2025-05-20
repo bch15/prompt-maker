@@ -1,18 +1,18 @@
-import adapter from '@sveltejs/adapter-auto'; // یا @sveltejs/adapter-vercel
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-  preprocess: vitePreprocess(), // این برای Tailwind با PostCSS کار می‌کند
-
-  kit: {
-    adapter: adapter(),
-    // اگر alias خاصی برای مسیرها دارید، اینجا تنظیم کنید
-    // alias: {
-    //   '$components': 'src/components',
-    //   '$lib': 'src/lib'
-    // }
-  }
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './src/**/*.{html,js,svelte,ts}', // مهم: تمام فایل‌هایی که ممکنه کلاس Tailwind داشته باشن
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Tahoma', 'sans-serif'], // تنظیم فونت پیش‌فرض فارسی
+      },
+      // اینجا می‌تونی سایر شخصی‌سازی‌های تم Tailwind رو اضافه کنی
+      // مثلا رنگ‌ها، فاصله‌ها و ...
+    },
+  },
+  plugins: [
+    // اینجا می‌تونی پلاگین‌های Tailwind مثل @tailwindcss/forms یا @tailwindcss/typography رو اضافه کنی
+  ],
 };
-
-export default config;
